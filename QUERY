@@ -1,0 +1,4 @@
+STEAMPIPE COMMAND to Get ec2 details like instance_id, name, vpc_id, region, tier_type, tags and save in to csv file
+
+steampipe query "select instance_id,tags->>'Name' AS name,instance_type,vpc_id,subnet_id,region,tags FROM aws_ec2_instance" --output csv > ec2_detailed.csv
+
